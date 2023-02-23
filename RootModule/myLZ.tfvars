@@ -18,7 +18,7 @@ resource_group_tags = {
 # Create SA flag
 ################
 resource_group_exists = false
-create_storage_account_flag = false
+create_storage_account_flag = true
 
 #################
 # Storage Account

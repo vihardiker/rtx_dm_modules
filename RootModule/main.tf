@@ -15,7 +15,9 @@ module "storage_account" {
   count = var.create_storage_account_flag == true ? 1 : 0 
   
   storage_account_name     = var.storage_account_name
-  resource_group_name      = var.resource_group_name
-  resource_group_location  = var.resource_group_location
+  resource_group_name      = var.create_resource_group_flag == true ? module.resource_group[0].resource_group_name : var.resource_group_name
+  resource_group_location  = var.create_resource_group_flag == true ? module.resource_group[0].resource_group_location : var.resource_group_location
+  #resource_group_name      = var.resource_group_name
+  #resource_group_location  = var.resource_group_location
   storage_account_tags     = var.storage_account_tags
 }
